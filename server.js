@@ -8,7 +8,7 @@ app.use(morgan('combined'));
 
 var articles=
 { 
-'article-One': {
+'articleOne': {
     title :'Article One | Janani Jaganathan',
     heading:'Article One',
     date:'Aug 14 2017',
