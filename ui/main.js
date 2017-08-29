@@ -7,7 +7,7 @@ var button=document.getElementById('counter');
      
      //capturing the response and store it in a variable
      request.onreadystatechange= function() {
-     if (request.readyState=== XMLHttprequest.DONE)
+     if (request.readyState=== XMLHttpRequest.DONE)
      {
          if(request.status===200) {
              // take some action
