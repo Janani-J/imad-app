@@ -1,11 +1,30 @@
 var button=document.getElementById('counter');
- var counter=0;
  
  button.onclick = function() {
+     //Create a request object
+      
+      var request= new XMLHttpRequest();
      
-     counter=counter+1;
-     var span=document.getElementById('count');
-     span.innerHTML=counter.toString();
+     //capturing the response and store it in a variable
+     request.onreadystatechange= function(){
+     if (request.readychange===XMLHttprequest.Done)
+     {
+         if(request.status===200) {
+             // take some action
+             var counter= request.responseText;
+             var span=document.getElementById('count');
+             span.innerHTML=counter.toString();
+         }
+     }
+     
+     };
+     
+     request.open('GET','http://jananinathanee.imad.hasura-app.io/counter',true);
+     request.send(null);
+     
+     
+
+
      
  };
 
