@@ -58,8 +58,8 @@ var button=document.getElementById('counter');
      request.send(null);
  };
  
-  var cmnt_submit=document.getElementById('submit_cmnt');
- cmnt_submit.onclick=function() 
+  var submitNew=document.getElementById('submit_cmnt');
+  submitNew.onclick=function() 
  {
 //Create a request object
       
@@ -87,7 +87,7 @@ var button=document.getElementById('counter');
  var commentInput=document.getElementById('comment');
  var comment=commentInput.value;
      
-     request.open('GET','http://jananinathanee.imad.hasura-app.io/article-one?comment=' + comment,true);
+     request.open('GET','http://jananinathanee.imad.hasura-app.io/:articleName?comment=' + comment,true);
      request.send(null);
  };
  
