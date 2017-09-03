@@ -25,7 +25,6 @@ var articles=
                 <p>
                 This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.
                 </p>`
-    
 },
 'article-two': {
     title :'Article Two | Janani Jaganathan',
@@ -78,6 +77,15 @@ function createTemplate(data)
                         ${content}
                     </div>
             </div>
+            
+             <div class="footer">
+            <input type="text" id="comment" placeholder="Comments Here!">
+            <input type="submit" id="submit_cmnt" value="Submit">
+            <hr/>  
+            <ul id="commentlist">
+            </ul>
+            </div>
+            
             </body>
         </html>` ;
         return htmlTemplate;
