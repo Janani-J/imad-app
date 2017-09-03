@@ -102,7 +102,7 @@ app.get('/', function (req, res) {
  })
  
  var comments=[];
- app.get('/article-one', function (req,res) {
+ app.get('/articleName', function (req,res) {
      var comment=req.query.comment;
     res.send(createTemplate(articles[articleName]));
      comments.push(comment)
