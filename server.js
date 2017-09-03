@@ -114,9 +114,8 @@ var names=[];
 app.get('/submit-name/:name',function(req,res) {
     //get the name from the request
     var name=req.params.name;
-    names.push(names);
-    
-    //JSON-JavaScript notation-for converting JS objects into strings
+    names.push(name);
+     //JSON-JavaScript notation-for converting JS objects into strings
     res.send(JSON.stringify(names));
     
     });
