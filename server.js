@@ -95,9 +95,13 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
- app.get('/:articleName', function (req,res) {
+var comments=[];
+ app.get('/articleName', function (req,res) {
      var articleName=req.params.articleName;
     res.send(createTemplate(articles[articleName]));
+     var comment=req.query.comment;
+     comments.push(comment)
+     res.send(JSON.stringify(comments));
  });
 
 var counter=0;
