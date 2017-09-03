@@ -30,9 +30,18 @@ var button=document.getElementById('counter');
  var submit=document.getElementById('submit_btn');
  submit.onclick=function() 
  {
-  //Capture the list of name
-  
-  var names=['name1','name2','name3','name4'];
+//Create a request object
+      
+      var request= new XMLHttpRequest();
+     
+     //capturing the response and store it in a variable
+     request.onreadystatechange= function() {
+     if (request.readyState=== XMLHttpRequest.DONE)
+     {
+         if(request.status===200) {
+            //Capture the list of name
+  var names=request.responseText;
+  nmaes= JSON.parse(names);
   var list='';
   for(var i=0;i<names.length;i++)
   {
@@ -40,6 +49,11 @@ var button=document.getElementById('counter');
    }
  var ul=document.getElementById('namelist');
  ul.innerHTML=list;
+         }
+     }
  };
-
+     
+     request.open('GET','http://jananinathanee.imad.hasura-app.io/submit-name?name= + name',true);
+     request.send(null);
+ };
  
