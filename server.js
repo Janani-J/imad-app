@@ -98,8 +98,8 @@ app.get('/', function (req, res) {
 var comments=[];
  app.get('/:articleName', function (req,res) {
      var articleName=req.params.articleName;
-    res.send(createTemplate(articles[articleName]));
      var comment=req.query.comment;
+    res.send(createTemplate(articles[articleName]));
      comments.push(comment)
      res.send(JSON.stringify(comments));
  });
