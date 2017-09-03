@@ -58,3 +58,36 @@ var button=document.getElementById('counter');
      request.send(null);
  };
  
+  var cmnt_submit=document.getElementById('submit_cmnt');
+ cmnt_submit.onclick=function() 
+ {
+//Create a request object
+      
+      var request= new XMLHttpRequest();
+     
+     //capturing the response and store it in a variable
+     request.onreadystatechange= function() {
+     if (request.readyState=== XMLHttpRequest.DONE)
+     {
+         if(request.status===200) {
+            //Capture the list of name
+  var comments=request.responseText;
+  comments= JSON.parse(comments);
+ var list='';
+  for(var i=0;i< comments.length;i++)
+  {
+  list +='<li>' + comments[i] + '</li>';
+   }
+ var ul=document.getElementById('commentlist');
+ ul.innerHTML=list;
+         }
+     }
+ };
+ 
+ var commentInput=document.getElementById('comment');
+ var comment=commentInput.value;
+     
+     request.open('GET','http://jananinathanee.imad.hasura-app.io/article-one?comment=' + comment,true);
+     request.send(null);
+ };
+ 
