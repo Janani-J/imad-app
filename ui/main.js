@@ -39,11 +39,11 @@ var button=document.getElementById('counter');
          if(request.status===200) {
             //Capture the list of name
   var names=request.responseText;
-  nmaes= JSON.parse(names);
+  names= JSON.parse(names);
   var list='';
-  for(var i=0;i<names.length;i++)
+  for(var i=0;i< names.length;i++)
   {
-  list+='<li>' + names[i] + '</li>';
+  list +='<li>' + names[i] + '</li>';
    }
  var ul=document.getElementById('namelist');
  ul.innerHTML=list;
