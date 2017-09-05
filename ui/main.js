@@ -25,7 +25,7 @@ var button=document.getElementById('counter');
  
  //Submit name
  
- var submit=document.getElementById('submit_btn');
+/* var submit=document.getElementById('submit_btn');
  submit.onclick=function() 
  {
 //Create a request object
@@ -57,6 +57,7 @@ var button=document.getElementById('counter');
      request.open('GET','http://jananinathanee.imad.hasura-app.io/submit-name?name=' + name,true);
      request.send(null);
  };
+*/
  
   var submitNew=document.getElementById('submit_cmnt');
   submitNew.onclick=function() 
