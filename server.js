@@ -96,21 +96,16 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-
+ var comments=[];
  app.get('/:articleName', function (req,res) {
      var articleName=req.params.articleName;
-    res.send(createTemplate(articles[articleName]));
- });
- 
- var comments=[];
- app.get('/article-one', function (req,res) {
      var comment=req.query.comment;
-     comments.push(comment);
+    res.send(createTemplate(articles[articleName]));
+    comments.push(comment);
      res.send(JSON.stringify(comments));
  });
  
-
-var counter=0;
+ var counter=0;
 app.get('/counter', function (req,res){
     counter=counter+1;
     res.send(counter.toString());
