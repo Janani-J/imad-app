@@ -1,4 +1,4 @@
-var button=document.getElementById('counter');
+/*var button=document.getElementById('counter');
  
  button.onclick = function() {
      //Create a request object
@@ -25,7 +25,7 @@ var button=document.getElementById('counter');
  
  //Submit name
  
-/* var submit=document.getElementById('submit_btn');
+ var submit=document.getElementById('submit_btn');
  submit.onclick=function() 
  {
 //Create a request object
