@@ -88,7 +88,7 @@
  var commentInput=document.getElementById('comment');
  var comment=commentInput.value;
      
-     request.open('GET','http://jananinathanee.imad.hasura-app.io/article-one?comment=' + comment,true);
+     request.open('GET','http://jananinathanee.imad.hasura-app.io/:articleName?comment=' + comment,true);
      request.send(null);
  };
  
