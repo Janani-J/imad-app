@@ -77,16 +77,6 @@ function createTemplate(data)
                         ${content}
                     </div>
             </div>
-            
-             <div class="footer">
-            <input type="text" placeholde="Comments Here!" id="comment">
-            <input type="submit" id="submit_cmnt" value="Submit">
-            <hr/>  
-            <ul id="commentlist">
-            </ul>
-            </div>
-            <script type="text/javascript" src="/ui/main.js">
-            </script>
             </body>
         </html>` ;
         return htmlTemplate;
@@ -100,9 +90,6 @@ app.get('/', function (req, res) {
  app.get('/:articleName', function (req,res) {
      var articleName=req.params.articleName;
      res.send(createTemplate(articles[articleName]));
-     var comment=req.query.comment;
-     comments.push(comment);
-     res.send(JSON.stringify(comments));
  });
  
  var counter=0;
